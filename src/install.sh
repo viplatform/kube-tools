@@ -2,7 +2,7 @@
 
 set -o errexit
 
-KUBECTL=1.23.0
+KUBECTL=1.28.0
 echo "downloading kubectl ${KUBECTL}"
 curl -sL https://storage.googleapis.com/kubernetes-release/release/v${KUBECTL}/bin/linux/amd64/kubectl \
 -o /usr/local/bin/kubectl && chmod +x /usr/local/bin/kubectl
@@ -20,7 +20,7 @@ curl -sSL https://get.helm.sh/helm-v${HELM_V2}-linux-amd64.tar.gz | \
 tar xz && mv linux-amd64/helm /usr/local/bin/helm && rm -rf linux-amd64
 helm version --client
 
-HELM_V3=3.7.2
+HELM_V3=3.15.4
 echo "downloading helm ${HELM_V3}"
 curl -sSL https://get.helm.sh/helm-v${HELM_V3}-linux-amd64.tar.gz | \
 tar xz && mv linux-amd64/helm /usr/local/bin/helmv3 && rm -rf linux-amd64
@@ -32,7 +32,7 @@ curl -sL https://github.com/instrumenta/kubeval/releases/download/v${KUBEVAL}/ku
 tar xz && mv kubeval /usr/local/bin/kubeval
 kubeval --version
 
-KUBEAUDIT=0.16.0
+KUBEAUDIT=0.22.2
 echo "downloading kubeaudit ${KUBEAUDIT}"
 curl -sSL https://github.com/Shopify/kubeaudit/releases/download/${KUBEAUDIT}/kubeaudit_${KUBEAUDIT}_linux_amd64.tar.gz | \
 tar xz && mv kubeaudit /usr/local/bin/kubeaudit
@@ -56,7 +56,7 @@ curl -sSL https://github.com/yannh/kubeconform/releases/download/v${KUBECONFORM}
 tar xz && mv kubeconform /usr/local/bin/kubeconform
 kubeconform --help
 
-YQ=4.16.1
+YQ=4.44.3
 echo "downloading yq"
 curl -sL https://github.com/mikefarah/yq/releases/download/v${YQ}/yq_linux_amd64 \
 -o /usr/local/bin/yq && chmod +x /usr/local/bin/yq
@@ -67,7 +67,7 @@ curl -sL https://github.com/stedolan/jq/releases/latest/download/jq-linux64 \
 -o /usr/local/bin/jq && chmod +x /usr/local/bin/jq
 jq --version
 
-KYVERNO=1.5.7
+KYVERNO=1.12.5
 echo "downloading kyverno ${KYVERNO}"
 curl -sSL https://github.com/kyverno/kyverno/releases/download/v${KYVERNO}/kyverno-cli_v${KYVERNO}_linux_x86_64.tar.gz | \
 tar xz && mv kyverno /usr/local/bin/kyverno
